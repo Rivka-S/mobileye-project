@@ -103,6 +103,7 @@ class TFL_Man:
         curr_container.EM = self.current_frame.Em
         curr_container = part3_SFM.calc_TFL_dist(prev_container, curr_container, self.focal, self.pp)
         self.part_3_visualize(prev_container, curr_container, self.focal, self.pp)
+        return curr_container;
 
     def run(self, image_path, index, Em):
         fig, axs = plt.subplots(3, 1)
@@ -123,4 +124,4 @@ class TFL_Man:
             plt.show(block=True)
         else:
             self.part_3_find_distance()
-        self.prev_frame.__copy__(self.current_frame)
+        return self.prev_frame.__copy__(self.current_frame)
