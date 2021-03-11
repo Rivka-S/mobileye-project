@@ -23,7 +23,7 @@ class Controller:
                 if i > 0:
                     EM = np.eye(4)
                     EM = np.dot(self.data['egomotion_' + str(i + start_i - 1) + '-' + str(i + start_i)], EM)
-                self.tfl_m.run(path[:-1], i + start_i, EM)
+                return self.tfl_m.run(path[:-1], i + start_i, EM)
 
 
 c = Controller("dusseldorf_000049.pls")
